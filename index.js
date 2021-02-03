@@ -1,15 +1,13 @@
-const fs = require('fs');
-const path = require('path');
-const http = require('./utils/index.js');
+const fs = require("fs");
+const http = require("./utils/index.js");
 
 async function getRes() {
   const res = await http(
-    'https://m-xusong.taihe.com/api/NEWS/getNewsDetail.json?newsId=286'
+    "https://m-xusong.taihe.com/api/NEWS/getNewsDetail.json?newsId=286"
   );
-
-  fs.writeFile('index.html', res, function (err, res) {
+  fs.writeFile("index.html", res, function (err, res) {
     if (err) throw err;
-    console.log('创建成功');
+    console.log("创建成功");
   });
 }
 
